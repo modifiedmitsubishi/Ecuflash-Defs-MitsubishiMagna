@@ -1,0 +1,25 @@
+<rom>
+	<romid>
+		<xmlid>91760000</xmlid>
+		<internalidaddress>f52</internalidaddress>
+		<internalidhex>91760000</internalidhex>
+		<ecuid>EM9832/MR988066</ecuid>
+		<make>Mitsubishi</make>
+		<market>AUS</market>
+		<model>Magna</model>
+		<submodel>TJ Ralliart</submodel>
+		<transmission>Manual</transmission>
+		<year>2002</year>
+		<flashmethod>mitsukernel</flashmethod>
+		<memmodel>SH7052</memmodel>
+	</romid>
+
+	<!--    Definition by WytWun - version: 20170716.2341    -->
+
+	<notes>
+		Definition for 3rd Gen Magna/Verada by WytWun - version: 20170716.2341
+	</notes>
+
+	<include>98320000</include>
+
+</rom>

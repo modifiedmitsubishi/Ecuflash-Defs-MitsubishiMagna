@@ -1,0 +1,191 @@
+<rom>
+	<romid>
+		<xmlid>magna_3g_at_base</xmlid>
+		<memmodel>SH7055</memmodel>
+	</romid>
+
+	<!--    Definition by WytWun - version: 20170716.2341    -->
+
+	<notes>
+		Definition for 3rd Gen Magna/Verada by WytWun - version: 20170716.2341
+	</notes>
+
+	<include>magna_3g_base</include>
+
+
+
+	<!--    ***  SCALINGS  ***    -->
+
+  	<scaling name="ATFluidTemp" units="&#176;Celsius" toexpr="x-40" frexpr="x+40" format="%.0f" min="-40" max="150" inc="1" storagetype="uint8" endian="big" />
+  	<scaling name="VehicleSpeedAT" units="km/h" toexpr="x * 1.205" frexpr="x / 1.205" format="%.0f" min="0" max="300" inc="1" storagetype="uint8" endian="big" /> 
+	<scaling name="ATShiftPressDC" units="%" toexpr="x*100/256" frexpr="x*256/100" format="%.1f" min="0" max="100" inc="0.3906" storagetype="uint8" endian="big"/>
+	<scaling name="ATShiftTime" units="mSec" toexpr="x*16" frexpr="x/16" format="%.0f" min="0" max="4080" inc="16" storagetype="uint8" endian="big"/>
+
+
+
+	<!--    ***  Auto shift points  ***    -->
+
+	<table name="Auto: 1 -> 2" category="Auto Trans Shift Points" type="2D" level="3" scaling="VehicleSpeedAT">
+		<table name="Throttle Position" type="Y Axis" elements="32" scaling="ThrottlePercentage" />
+	</table>
+
+	<table name="Auto: 2 -> 1" category="Auto Trans Shift Points" type="2D" level="3" scaling="VehicleSpeedAT">
+		<table name="Throttle Position" type="Y Axis" elements="32" scaling="ThrottlePercentage" />
+	</table>
+
+	<table name="Auto: 2 -> 3" category="Auto Trans Shift Points" type="2D" level="3" scaling="VehicleSpeedAT">
+		<table name="Throttle Position" type="Y Axis" elements="32" scaling="ThrottlePercentage" />
+	</table>
+
+	<table name="Auto: 3 -> 2" category="Auto Trans Shift Points" type="2D" level="3" scaling="VehicleSpeedAT">
+		<table name="Throttle Position" type="Y Axis" elements="32" scaling="ThrottlePercentage" />
+	</table>
+
+	<table name="Auto: 3 -> 4" category="Auto Trans Shift Points" type="2D" level="3" scaling="VehicleSpeedAT">
+		<table name="Throttle Position" type="Y Axis" elements="32" scaling="ThrottlePercentage" />
+	</table>
+
+	<table name="Auto: 4 -> 3" category="Auto Trans Shift Points" type="2D" level="3" scaling="VehicleSpeedAT">
+		<table name="Throttle Position" type="Y Axis" elements="32" scaling="ThrottlePercentage" />
+	</table>
+
+	<table name="Auto: 4 -> 5" category="Auto Trans Shift Points" type="2D" level="3" scaling="VehicleSpeedAT">
+		<table name="Throttle Position" type="Y Axis" elements="32" scaling="ThrottlePercentage" />
+	</table>
+
+	<table name="Auto: 5 -> 4" category="Auto Trans Shift Points" type="2D" level="3" scaling="VehicleSpeedAT">
+		<table name="Throttle Position" type="Y Axis" elements="32" scaling="ThrottlePercentage" />
+	</table>
+
+
+
+	<!--    ***  Auto Trans Shift Pressure (PWM duty cycle)  ***    -->
+
+	<table name="Shift Pressure: 1 -> 2 (Solenoid DC)" category="Auto Trans Shift Pressure" type="2D" scaling="ATShiftPressDC">
+		<table name="Engine Load" type="Y Axis" elements="16" scaling="Load16"/>
+	</table>
+
+	<table name="Shift Pressure: 2 -> 3 (Solenoid DC)" category="Auto Trans Shift Pressure" type="2D" scaling="ATShiftPressDC">
+		<table name="Engine Load" type="Y Axis" elements="16" scaling="Load16"/>
+	</table>
+
+	<table name="Shift Pressure: 3 -> 4 (Solenoid DC)" category="Auto Trans Shift Pressure" type="2D" scaling="ATShiftPressDC">
+		<table name="Engine Load" type="Y Axis" elements="16" scaling="Load16"/>
+	</table>
+
+	<table name="Shift Pressure: 4 -> 5 (Solenoid DC)" category="Auto Trans Shift Pressure" type="2D" scaling="ATShiftPressDC">
+		<table name="Engine Load" type="Y Axis" elements="16" scaling="Load16"/>
+	</table>
+
+
+
+	<!--    ***  Auto Trans Shift Timing  ***    -->
+
+	<table name="Shift Time: 1 -> 2" category="Auto Trans Shift Timing" type="2D" scaling="ATShiftTime">
+		<table name="Engine Load" type="Y Axis" elements="16" scaling="Load16"/>
+	</table>
+
+	<table name="Shift Time: 2 -> 3" category="Auto Trans Shift Timing" type="2D" scaling="ATShiftTime">
+		<table name="Engine Load" type="Y Axis" elements="16" scaling="Load16"/>
+	</table>
+
+	<table name="Shift Time: 3 -> 4" category="Auto Trans Shift Timing" type="2D" scaling="ATShiftTime">
+		<table name="Engine Load" type="Y Axis" elements="16" scaling="Load16"/>
+	</table>
+
+	<table name="Shift Time: 4 -> 5" category="Auto Trans Shift Timing" type="2D" scaling="ATShiftTime">
+		<table name="Engine Load" type="Y Axis" elements="16" scaling="Load16"/>
+	</table>
+
+
+
+	<!--    ***  Auto trans sensor calibration  ***    -->
+
+	<table name="ATF Temperature Sensor" category="Sensor Calibration" type="2D" level="2" scaling="ATFluidTemp">
+		<table name="ATF Sensor ADC Input" type="Y Axis" elements="21" scaling="VoltsADCx4" />
+	</table>
+
+
+
+	<!--    ***  Auto trans identification  ***    -->
+
+	<table name="TCU Internal ID #1" category="Auto Trans Identification" address="40008" type="2D" level="3" scaling="Hex8">
+		<table name="Byte Position" type="Static X Axis" elements="3">
+			<data>b1</data>
+			<data>b2</data>
+			<data>b3</data>
+		</table>
+	</table>
+
+	<table name="TCU Internal ID #2" category="Auto Trans Identification" address="40006" type="1D" level="3" scaling="Hex16" />
+
+	<table name="TCU Case Part Number" category="Auto Trans Identification" address="40016" type="3D" level="4" scaling="Hex8">
+		<table name="Part Number" type="Static X Axis" elements="3">
+			<data>PN2 .</data>
+			<data>PN3 .</data>
+			<data>PN4 .</data>
+		</table>
+		<table name="PN1" address="40015" type="Y Axis" elements="1" scaling="CaseAlphaNumeric" />
+	</table>
+
+
+
+	<!--    ***  Auto trans option bits  ***    -->
+
+	<table name="Periphery 40010" address="40010" category="Auto Trans Periphery" type="2D" level="3" scaling="blobbits">
+		<table name="Periphery Bit Number" type="Static Y Axis" elements="8">
+			<data>bit.7</data>
+			<data>Use AccelPosnSensor (TCL)</data>
+			<data>bit.5</data>
+			<data>bit.4</data>
+			<data>bit.3</data>
+			<data>bit.2</data>
+			<data>Tiptonic Shift Enable</data>
+			<data>bit.0</data>
+		</table>
+	</table>
+
+
+
+	<!--    ***  MUT  ***    -->
+
+	<table name="TCU MUT Table" category="MUT" type="3D" level="2" scaling="RAMSegAddr">
+		<table name="X" type="Static X Axis" elements="16">
+			<data>. 0 .</data>
+			<data>. 1 .</data>
+			<data>. 2 .</data>
+			<data>. 3 .</data>
+			<data>. 4 .</data>
+			<data>. 5 .</data>
+			<data>. 6 .</data>
+			<data>. 7 .</data>
+			<data>. 8 .</data>
+			<data>. 9 .</data>
+			<data>. A .</data>
+			<data>. B .</data>
+			<data>. C .</data>
+			<data>. D .</data>
+			<data>. E .</data>
+			<data>. F .</data>
+		</table>
+		<table name="Y" type="Static Y Axis" elements="16">
+			<data>MUT_0x .</data>
+			<data>MUT_1x .</data>
+			<data>MUT_2x .</data>
+			<data>MUT_3x .</data>
+			<data>MUT_4x .</data>
+			<data>MUT_5x .</data>
+			<data>MUT_6x .</data>
+			<data>MUT_7x .</data>
+			<data>MUT_8x .</data>
+			<data>MUT_9x .</data>
+			<data>MUT_Ax .</data>
+			<data>MUT_Bx .</data>
+			<data>MUT_Cx .</data>
+			<data>MUT_Dx .</data>
+			<data>MUT_Ex .</data>
+			<data>MUT_Fx .</data>
+		</table>
+	</table>
+
+</rom>

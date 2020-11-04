@@ -1,0 +1,533 @@
+<rom>
+	<romid>
+		<xmlid>87410004</xmlid>
+		<internalidaddress>f52</internalidaddress>
+		<internalidhex>87410004</internalidhex>
+		<ecuid>MR514496/MR514497</ecuid>
+		<make>Mitsubishi</make>
+		<market>US</market>
+		<model>Diamante</model>
+		<submodel></submodel>
+		<transmission>Auto 4sp Tiptronic</transmission>
+		<year>2001</year>
+		<flashmethod>mitsukernel</flashmethod>
+		<memmodel>SH7055</memmodel>
+	</romid>
+
+	<!--    Definition by WytWun - version: 20170716.2341    -->
+
+	<notes>
+		Definition for USDM Diamante by WytWun - version: 20170716.2341
+	</notes>
+
+	<include>magna_3g_at_base</include>
+
+
+
+	<!--    *** Fuel ***    -->
+
+	<table name="Fuel Mixture - High Octane" address="35b7">
+		<table name="Engine Load" address="5c5e" />
+		<table name="RPM" address="5c36" />
+	</table>
+
+	<table name="Fuel Mixture - Low Octane" address="3677">
+		<table name="Engine Load" address="5c5e" />
+		<table name="RPM" address="5c36" />
+	</table>
+
+	<table name="Mixture Enrichment - Coolant Temperature (Warmup)" address="37ee">
+		<table name="Coolant Temp" address="5d84" />
+	</table>
+
+	<table name="Mixture Enrichment Compensation - Load" address="37dc">
+		<table name="Engine Load" address="5ae2" />
+	</table>
+
+	<table name="Minimum RPM for Load Compensated Mixture Enrichment" address="16e7" />
+
+	<table name="Load Compensation - Intake Air Temperature" address="37ce">
+		<table name="Intake Air Temp" address="5e12" />
+	</table>
+
+	<table name="Open Loop Load Threshold #1" address="375a">
+		<table name="RPM" address="59e0" />
+	</table>
+
+	<table name="Open Loop Load Threshold #2" address="376c">
+		<table name="RPM" address="59e0" />
+	</table>
+
+	<table name="Open Loop Throttle Threshold" address="378c">
+		<table name="RPM" address="59e0" />
+	</table>
+
+	<table name="Closed Loop Trim - MAF Thresholds" address="372b" />
+
+	<table name="Closed Loop Trim - RPM Thresholds" address="372f" />
+
+	<table name="Minimum Coolant Temp for Closed Loop" address="1588" />
+
+	<table name="Minimum Coolant Temp for LTFT Updates" address="15ce" />
+
+	<table name="Maxmum Intake Air Temp for LTFT Updates" address="15d0" />
+
+
+
+	<!--    ***  Fuel - Cranking  ***    -->
+
+	<table name="Priming IPW - Uncompensated" address="153a" />
+
+	<table name="Min Coolant Temp for Coolant Temp Compensated Priming IPW" address="16f2" />
+
+	<table name="Priming IPW - Coolant Temperature Compensated" address="396e">
+		<table name="Coolant Temp" address="5d84" />
+	</table>
+
+	<table name="Cranking IPW" address="389c">
+		<table name="Coolant Temp" address="5da0" />
+	</table>
+
+	<table name="Cranking IPW Compensation - Cranking Time (Coolant Temp &gt; -18&#176;C)" address="38ac">
+		<table name="Cranking units since starter engaged" address="5a78" />
+	</table>
+
+	<table name="Cranking IPW Compensation - Cranking Time (Coolant Temp &#8804; -18&#176;C)" address="38ba">
+		<table name="Cranking units since starter engaged" address="5a78" />
+	</table>
+
+
+
+	<!--    ***  Fuel - Post Start  ***    -->
+
+	<table name="Post-Cranking Enrichment" address="37fe">
+		<table name="Coolant Temp" address="5d84" />
+	</table>
+
+	<table name="Enrichment Thresholds for Fixed Decay Time" address="152c" />
+
+	<table name="Decay Time (per 1.5% Enrichment) - Fixed" address="1530" />
+
+	<table name="Decay Time (per 1.5% Enrichment) - Coolant Temperature" address="380e">
+		<table name="Coolant Temp" address="5d84" />
+	</table>
+
+
+
+	<!--    ***  Fuel - Sync Accel Enrichment  ***    -->
+
+	<table name="Accel Enrichment Compensation - Coolant Temp" address="38e2">
+		<table name="Coolant Temp" address="5d6a" />
+	</table>
+
+	<table name="Accel Enrichment Compensation - RPM" address="38f0">
+		<table name="RPM" address="59be" />
+	</table>
+
+	<table name="Min Load Change for Accel Contribution - Steady Throttle" address="3910">
+		<table name="Engine Load" address="5aae" />
+	</table>
+
+	<table name="Min Load Change for Accel Contribution - Changing Throttle" address="39fa">
+		<table name="Engine Load" address="5aae" />
+	</table>
+
+	<table name="Ceiling Airflow for Accel Enrichment" address="15fa" />
+
+	<table name="Ceiling Airflow Delta for Accel Enrichment" address="160a" />
+
+
+
+	<!--    ***  Fuel - Sync Decel Enleanment  ***    -->
+
+	<table name="Decel Enleanment Compensation - RPM" address="39b8">
+		<table name="RPM" address="59be" />
+	</table>
+
+	<table name="Decel Enleanment Compensation - Coolant Temp" address="39aa">
+		<table name="Coolant Temp" address="5d6a" />
+	</table>
+
+	<table name="Decel Enleanment Compensation - Engine Load" address="39ca">
+		<table name="Engine Load" address="5aae" />
+	</table>
+
+	<table name="Min Load Change for Decel Contribution - Steady Throttle" address="3920">
+		<table name="Engine Load" address="5aae" />
+	</table>
+
+	<table name="Min Load Change for Decel Contribution - Changing Throttle" address="3a0a">
+		<table name="Engine Load" address="5aae" />
+	</table>
+
+	<table name="Ceiling Airflow for Decel Enleanment" address="1608" />
+
+	<table name="Ceiling Airflow Delta for Decel Enleanment" address="160c" />
+
+
+
+	<!--    ***  Fuel - Async Accel Enrichment  ***    -->
+
+	<table name="Pause Period" address="1624" />
+
+	<table name="Minimum TPS Delta for Enrichment" address="1626" />
+
+	<table name="Maximum Enriched IPW" address="1628" />
+
+	<table name="Maximum Cumulative Enrichment Factor" address="162a" />
+
+	<table name="Startup Coolant Temp Enrichment Compensation Factor" address="162c" />
+
+	<table name="TPS Limit for Async Accel Enrichment Cutoff - RPM" address="393a">
+		<table name="RPM" address="59be" />
+	</table>
+
+	<table name="Async Accel Enrichment Multiplier - TPS Delta" address="392a" />
+
+	<table name="Async Accel Enrichment Compensation - RPM" address="395a">
+		<table name="RPM" address="59be" />
+	</table>
+
+	<table name="Async Accel Enrichment Compensation - Coolant Temp" address="394c">
+		<table name="Coolant Temp" address="5d6a" />
+	</table>
+
+
+
+	<!--    ***  Fuel - Limp Mode  ***    -->
+
+	<table name="Limp Mode Fuel" address="3823">
+		<table name="TPS (Comp)" address="5d52" />
+		<table name="RPM" address="5d3e" />
+	</table>
+
+	<table name="Limp Mode TPS Compensation - Coolant Temp (adder)" address="3f6c">
+		<table name="Coolant Temp" address="5d6a" />
+	</table>
+
+
+
+	<!--    ***  Injectors  ***    -->
+
+	<table name="Fuel Composition Flow Rate Compensation" address="35a3" />
+
+	<table name="Injector Size" address="1506" />
+
+	<table name="Injector Latency" address="384c">
+		<table name="Battery Voltage" address="5b9e" />
+	</table>
+
+	<table name="Injector Flow Rate Linearisation Adder" address="3853" />
+
+
+
+	<!--    ***  Air Flow  ***    -->
+
+	<table name="Raw Airflow to Engine Load Conversion Factor" address="150c" />
+
+	<table name="MAF Scaling (incl flow trim)" address="3506">
+		<table name="MAF Frequency" address="5b4e" />
+	</table>
+
+	<table name="MAF Compensation - Relative Air Density" address="353e">
+		<table name="Intake Air Temp" address="5e12" />
+	</table>
+
+	<table name="MAF Compensation - Barometric Press and Air Temp" address="3551">
+		<table name="IAT Comp/Baro" address="5b3c" />
+		<table name="MAF Frequency" address="5b82" />
+	</table>
+
+	<table name="MAF Compensation - Other" address="3522">
+		<table name="MAF Frequency" address="5b4e" />
+	</table>
+
+	<table name="Max Allowed MAF Frequency" address="357c">
+		<table name="RPM" address="5a56" />
+	</table>
+
+	<table name="Max Allowed MAF Frequency on Reset" address="150e" />
+
+	<table name="Air Flow Compensation - Coolant Temperature" address="358e">
+		<table name="Coolant Temp" address="5d6a" />
+	</table>
+
+	<table name="Air Flow Compensation - Intake Air Temperature" address="359c">
+		<table name="Intake Air Temp" address="5e12" />
+	</table>
+
+
+
+	<!--    ***  Timing  ***    -->
+
+	<table name="Ignition Advance - High Octane" address="3a81">
+		<table name="Engine Load" address="5cb0" />
+		<table name="RPM" address="5c80" />
+	</table>
+
+	<table name="Ignition Advance - Low Octane" address="3b71">
+		<table name="Engine Load" address="5cb0" />
+		<table name="RPM" address="5c80" />
+	</table>
+
+	<table name="Ignition Advance Trim - Low Coolant Temperature" address="3c61">
+		<table name="Engine Load" address="5cb0" />
+		<table name="RPM" address="5c80" />
+	</table>
+
+	<table name="Ignition Advance Warm-up Trim Interpolation" address="3daa">
+		<table name="Coolant Temp" address="5df8" />
+	</table>
+
+	<table name="Ignition Advance Compensation - Coolant Temperature" address="3d70">
+		<table name="Coolant Temp" address="5d6a" />
+	</table>
+
+	<table name="Ignition Advance Compensation - Intake Air Temperature" address="3d7e">
+		<table name="Intake Air Temp" address="5e12" />
+	</table>
+
+	<table name="Minimum Load for IAT Ignition Advance Compensation" address="3d98">
+		<table name="RPM" address="59be" />
+	</table>
+
+	<table name="Ignition Advance - Minimum Limit - TCL Disabled" address="16903" />
+
+	<table name="Ignition Advance - Minimum Limit - TCL Enabled" address="4224">
+		<table name="Coolant Temp" address="5d6a" />
+	</table>
+
+	<table name="Ignition Advance - Maximum Limit" address="1691f" />
+
+
+
+	<!--    ***  Ignition Coil  ***    -->
+
+	<table name="Ignition Coil Base Dwell Time" address="3db8">
+		<table name="Battery Voltage" address="5bb6" />
+	</table>
+
+	<table name="Ignition Coil Dwell Time Reduction RPM Threshold" address="1710" />
+
+	<table name="Ignition Coil Dwell Time Reduction Factor" address="3dc8">
+		<table name="Battery Voltage" address="5bb6" />
+	</table>
+
+
+
+	<!--    ***  Emissions  ***    -->
+
+	<table name="EGR System Enable" address="102d" />
+
+	<table name="EGR Solenoid Duty Cycle #1" address="435b">
+		<table name="Engine Load" address="5ea2" />
+		<table name="RPM" address="5e82" elements="11" />
+	</table>
+
+	<table name="EGR Solenoid Duty Cycle #2" address="43eb">
+		<table name="Engine Load" address="5ea2" />
+		<table name="RPM" address="5e82" elements="11" />
+	</table>
+
+	<table name="EGR Solenoid Duty Cycle Compensation - Coolant Temp" address="4476">
+		<table name="Coolant Temp" address="5d6a" />
+	</table>
+
+
+
+	<!--    ***  Idle  ***    -->
+
+	<table name="Target Idle RPM - Neutral" address="3e0e">
+		<table name="Coolant Temp" address="5dbc" />
+	</table>
+
+	<table name="Target Idle RPM - Drive" address="3e1c">
+		<table name="Coolant Temp" address="5d6a" />
+	</table>
+
+	<table name="Target Idle RPM - A/C On" address="181a" />
+
+	<table name="Idle Error Demand Adjustment - A/C Off" address="3f3e">
+		<table name="RPM Error" address="5a92" />
+	</table>
+
+	<table name="Idle Error Demand Adjustment - A/C On" address="3f4e">
+		<table name="RPM Error" address="5a92" />
+	</table>
+
+	<table name="Idle Error Sensitivity Threshold (% Target Idle RPM)" address="186c" />
+
+	<table name="ISCV Stepper Lookup Table" address="3f7f">
+		<table name="Coolant Temp" address="5e2a" />
+		<table name="ISCV Demand" address="5e44" />
+	</table>
+
+	<table name="Initial ISCV Demand - A/C Off, Neutral" address="3e2a">
+		<table name="Coolant Temp" address="5dbc" />
+	</table>
+
+	<table name="Initial ISCV Demand - A/C Off, Drive" address="3e38">
+		<table name="Coolant Temp" address="5d6a" />
+	</table>
+
+	<table name="Initial ISCV Demand - A/C On, Neutral" address="3e46">
+		<table name="Coolant Temp" address="5dbc" />
+	</table>
+
+	<table name="Initial ISCV Demand - A/C On, Drive" address="3e62">
+		<table name="Coolant Temp" address="5d6a" />
+	</table>
+
+	<table name="ISCV Demand - Cranking" address="3e7e">
+		<table name="Coolant Temp" address="5d6a" />
+	</table>
+
+	<table name="ISCV Demand - Post-Cranking Adder" address="3f04">
+		<table name="Coolant Temp" address="5d6a" />
+	</table>
+
+	<table name="Idle-UP Position Decay Time (per demand unit) After Startup" address="3f12">
+		<table name="Coolant Temp" address="5d6a" />
+	</table>
+
+
+
+	<!--    ***  Cooling  ***    -->
+
+	<table name="Fan Control Speed Thresholds - A/C Off" address="429e" />
+
+	<table name="Fan Control Speed Thresholds - A/C On" address="42a2" />
+
+	<table name="Fan Control - Normal - A/C Off" address="42a6" />
+
+	<table name="Fan Control - Normal - A/C On" address="42b8" />
+
+	<table name="Fan Control - Aux" address="19ca" />
+
+
+
+	<!--    ***  Sensor Calibration  ***    -->
+
+	<table name="Coolant Temperature Sensor" address="97a4">
+		<table name="Coolant Temp Sensor ADC Input" address="9850" />
+	</table>
+
+	<table name="Intake Air Temperature Sensor" address="9998">
+		<table name="IAT Sensor ADC Input" address="9a2e" />
+	</table>
+
+	<table name="ATF Temperature Sensor" address="419de">
+		<table name="ATF Sensor ADC Input" address="41108" />
+	</table>
+
+
+
+	<!--    ***  Sensor Limits  ***    -->
+
+	<table name="Barometric Pressure Sensor Out-Of-Range CEL" address="fdd3" />
+
+	<table name="Barometric Pressure Sensor Absolute Limits" address="1b42" />
+
+	<table name="Default Barometric Pressure (Sensor Out-Of-Range)" address="fe0c" />
+
+
+
+	<!--    ***  Auto tranmission shift points  ***    -->
+
+	<table name="Auto: 1 -> 2" address="419fa">
+		<table name="Throttle Position" address="41178" />
+	</table>
+
+	<table name="Auto: 2 -> 1" address="41a20">
+		<table name="Throttle Position" address="41178" />
+	</table>
+
+	<table name="Auto: 2 -> 3" address="41a46">
+		<table name="Throttle Position" address="41178" />
+	</table>
+
+	<table name="Auto: 3 -> 2" address="41a6c">
+		<table name="Throttle Position" address="41178" />
+	</table>
+
+	<table name="Auto: 3 -> 4" address="41a92">
+		<table name="Throttle Position" address="41178" />
+	</table>
+
+	<table name="Auto: 4 -> 3" address="41ab8">
+		<table name="Throttle Position" address="41178" />
+	</table>
+
+	<table name="Auto: 4 -> 5" address="41ade">
+		<table name="Throttle Position" address="41178" />
+	</table>
+
+	<table name="Auto: 5 -> 4" address="41b04">
+		<table name="Throttle Position" address="41178" />
+	</table>
+
+
+
+	<!--    ***  Auto Trans Shift Pressure (PWM duty cycle)  ***    -->
+
+	<table name="Shift Pressure: 1 -> 2 (Solenoid DC)" address="418d6">
+		<table name="Engine Load" address="41886" />
+	</table>
+
+	<table name="Shift Pressure: 2 -> 3 (Solenoid DC)" address="418ec">
+		<table name="Engine Load" address="41886" />
+	</table>
+
+	<table name="Shift Pressure: 3 -> 4 (Solenoid DC)" address="41902">
+		<table name="Engine Load" address="41886" />
+	</table>
+
+	<table name="Shift Pressure: 4 -> 5 (Solenoid DC)" address="41918">
+		<table name="Engine Load" address="41886" />
+	</table>
+
+
+
+	<!--    ***  Auto Trans Shift Timing  ***    -->
+
+	<table name="Shift Time: 1 -> 2" address="4192e">
+		<table name="Engine Load" address="41886" />
+	</table>
+
+	<table name="Shift Time: 2 -> 3" address="41944">
+		<table name="Engine Load" address="41886" />
+	</table>
+
+	<table name="Shift Time: 3 -> 4" address="4195a">
+		<table name="Engine Load" address="41886" />
+	</table>
+
+	<table name="Shift Time: 4 -> 5" address="41970">
+		<table name="Engine Load" address="41886" />
+	</table>
+
+
+
+	<!--    ***  Misc Limits  ***    -->
+
+	<table name="Speed Limit" address="156c" />
+
+	<table name="Rev Limit" address="156a" />
+
+
+
+	<!--    ***  MISC  ***    -->
+
+	<table name="Init Code" address="3ffcc" />
+
+	<table name="MUT BaudRate" address="cf59" />
+
+
+
+	<!--    ***  MUT  ***    -->
+
+	<table name="MUT Table" address="31420" />
+
+	<table name="TCU MUT Table" address="7f784" />
+
+</rom>

@@ -1,0 +1,25 @@
+<rom>
+	<romid>
+		<xmlid>97180004</xmlid>
+		<internalidaddress>f52</internalidaddress>
+		<internalidhex>97180004</internalidhex>
+		<ecuid>EM9718/MR507993</ecuid>
+		<make>Mitsubishi</make>
+		<market>AUS</market>
+		<model>Magna</model>
+		<submodel>TJ 3.5</submodel>
+		<transmission>Manual</transmission>
+		<year>2000</year>
+		<flashmethod>mitsukernel</flashmethod>
+		<memmodel>SH7052</memmodel>
+	</romid>
+
+	<!--    Definition by WytWun - version: 20170716.2341    -->
+
+	<notes>
+		Definition for 3rd Gen Magna/Verada by WytWun - version: 20170716.2341
+	</notes>
+
+	<include>97180003</include>
+
+</rom>
